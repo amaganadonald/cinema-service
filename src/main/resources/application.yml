@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: cinema-service
+
+  datasource:
+    url: jdbc:postgresql://postgres1:5432/cinema_db
+    username: postgres
+    password: donald
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+        highlight_sql: true
+        generate_statistics: true
+
+server:
+  port: 9004

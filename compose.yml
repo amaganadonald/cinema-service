@@ -1,0 +1,29 @@
+services:
+  postgres:
+    image: 'postgres'
+    restart: always
+    ports:
+      - '5432:5432'
+    environment:
+      - 'POSTGRES_DB=cinema-db'
+      - 'POSTGRES_USER=postgres'
+      - 'POSTGRES_PASSWORD=donald'
+    volumes:
+      - ./data:/var/lib/postgresql/data
+      - postgresql_data:/var/lib/postgresql/data
+      
+  pgadmin4:
+    image: 'elestio/pgadmin'
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: donald9do@gmail.com
+      PGADMIN_DEFAULT_PASSWORD: donald
+      PGADMIN_LISTEN_PORT: 4000
+    ports:
+      - '4000:4000'
+    volumes:
+      - ./servers.json:/pgadmin4/servers.json
+
+volumes:
+  postgresql:
+  postgresql_data:
