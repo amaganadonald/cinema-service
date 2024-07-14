@@ -14,6 +14,7 @@ public interface PlaceMapper {
     PlaceMapper INSTANCE = Mappers.getMapper(PlaceMapper.class);
 
     @Mapping(target = "tickets", ignore = true)
+    @Mapping(target="salle", ignore=true)
     Place placeRequestDtoToPlace(PlaceRequestDto placeRequestDto);
 
     PlaceResponseDto placeToPlaceResponseDto(Place place);

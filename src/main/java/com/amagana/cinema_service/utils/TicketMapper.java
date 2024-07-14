@@ -16,6 +16,7 @@ public interface TicketMapper {
     @Mapping(target = "id", ignore = true)
     @Mapping(target = "projectionMovie", ignore = true)
     @Mapping(target = "place", ignore = true)
+    @Mapping(target = "ticketCode", ignore = true)
     Ticket ticketRequestToTicket(TicketRequestDto ticketRequestDto);
 
     TicketResponseDto ticketToTicketResponseDto(Ticket ticket);
